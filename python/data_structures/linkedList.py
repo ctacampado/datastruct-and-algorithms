@@ -13,7 +13,7 @@ class LinkedList:
             curr = curr.next
         curr.next = node
     
-    def returnLinkedListData(self):
+    def data(self):
         dataList = []
         curr = self.head
         while(curr.next != None):

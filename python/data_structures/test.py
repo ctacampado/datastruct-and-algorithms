@@ -10,7 +10,7 @@ def linkedListTest():
     llist.addNode(node3)
     llist.addNode(node4)
     llist.addNode(node2)
-    data = llist.returnLinkedListData()
+    data = llist.data()
     print(data)
     if(data == [1,3,4,2]): print("pass!")
     else: print("fail!")
