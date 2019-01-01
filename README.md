@@ -10,7 +10,7 @@ these languages because I use them a lot in my job.
 * Python - 3.7.1
 
 ## Running the Applications
-Run them from the command line using your typical [go run `<filename>`] or [python `<filename>`]
+Run them from the command line using your typical [`go run <filename>`] or [`python <filename>`]
   
 ## Data Structures
 * Graph
