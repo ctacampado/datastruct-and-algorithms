@@ -18,6 +18,19 @@ class LinkedList:
             self.tail.next = node
             self.tail = node
         self.len += 1
+
+    def insertNode(self, node, p):
+        pos = p-1
+        if(pos >= self.len or pos <= 0):
+            return -1
+        else:
+            curr = self.head
+            for i in range(pos):
+                curr = curr.next
+            prev = curr.next
+            curr.next = node
+            node.next = prev
+            self.len += 1
     
     def data(self):
         dataList = []
