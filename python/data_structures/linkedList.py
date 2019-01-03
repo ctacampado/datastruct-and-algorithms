@@ -5,13 +5,19 @@ class Node:
 
 class LinkedList:
     def __init__(self, node):
-        self.head = node
+        self.head  = node
+        self.tail  = node
+        self.len = 1
     
     def addNode(self, node):
         curr = self.head
-        while(curr.next != None):
-            curr = curr.next
-        curr.next = node
+        if(self.tail == curr):
+            curr.next = node
+            self.tail = node
+        else:
+            self.tail.next = node
+            self.tail = node
+        self.len += 1
     
     def data(self):
         dataList = []

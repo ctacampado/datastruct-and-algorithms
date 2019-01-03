@@ -1,21 +1,21 @@
 from linkedList import Node, LinkedList
 
-def linkedListTest():
+def linkedListTest(ctr):
     print("Running Linked List Test...")
-    node1 = Node(1)
-    node2 = Node(2)
-    node3 = Node(3)
-    node4 = Node(4)
-    llist = LinkedList(node1)
-    llist.addNode(node3)
-    llist.addNode(node4)
-    llist.addNode(node2)
+    testData = []
+    initNode = Node(ctr)
+    llist = LinkedList(initNode)
+    testData.append(initNode.data)
+    for i in range(ctr-1):
+        llist.addNode(Node(i))
+        testData.append(Node(i).data)
     data = llist.data()
+    print("linked list length: ", llist.len)
     print(data)
-    if(data == [1,3,4,2]): print("pass!")
+    if(data == testData and llist.len == len(testData)): print("pass!")
     else: print("fail!")
 
 def runTests():
-    linkedListTest()
+    linkedListTest(31)
 
 runTests()
