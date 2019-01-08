@@ -33,5 +33,6 @@ def runTests():
     linkedListTest(0,0)
     linkedListTest(1,1)
     linkedListTest(3,2)
+    linkedListTest(5,6)
 
 runTests()

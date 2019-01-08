@@ -20,14 +20,18 @@ class LinkedList:
         self.len += 1
 
     def insertNode(self, node, pos):
-        if(pos >= self.len or pos < 0):
+        if(pos > self.len or pos < 0):
             return -1
         else:
+            print(self.len)
             curr = self.head
             prev = self.head
             if(pos == 0):
                 self.head = node
                 node.next = curr
+            elif(pos == self.len):
+                self.tail.next = node
+                self.tail = node
             else:
                 for i in range(pos):
                     prev = curr
@@ -37,7 +41,7 @@ class LinkedList:
             self.len += 1
     
     def deleteNode(self, pos):
-        if(pos >= self.len or pos < 0):
+        if(pos > self.len or pos < 0):
             return -1
         else:
             if(pos == 0):
@@ -52,7 +56,6 @@ class LinkedList:
                     curr = curr.next
                 prev.next = curr.next
             self.len -= 1
-
     
     def data(self):
         dataList = []
