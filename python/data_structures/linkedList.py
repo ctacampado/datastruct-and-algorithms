@@ -19,18 +19,40 @@ class LinkedList:
             self.tail = node
         self.len += 1
 
-    def insertNode(self, node, p):
-        pos = p-1
-        if(pos >= self.len or pos <= 0):
+    def insertNode(self, node, pos):
+        if(pos >= self.len or pos < 0):
             return -1
         else:
             curr = self.head
-            for i in range(pos):
-                curr = curr.next
-            prev = curr.next
-            curr.next = node
-            node.next = prev
+            prev = self.head
+            if(pos == 0):
+                self.head = node
+                node.next = curr
+            else:
+                for i in range(pos):
+                    prev = curr
+                    curr = curr.next
+                prev.next = node
+                node.next = curr
             self.len += 1
+    
+    def deleteNode(self, pos):
+        if(pos >= self.len or pos < 0):
+            return -1
+        else:
+            if(pos == 0):
+                curr = self.head
+                self.head = curr.next
+            else:
+                curr = self.head
+                prev = self.head
+                for i in range(pos):
+                    if(i == pos-1):
+                        prev = curr
+                    curr = curr.next
+                prev.next = curr.next
+            self.len -= 1
+
     
     def data(self):
         dataList = []

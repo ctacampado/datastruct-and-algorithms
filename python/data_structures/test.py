@@ -4,10 +4,10 @@ def linkedListTest(ctr, pos):
     print("Running Linked List Test...")
     testData = []
     initNode = Node(ctr)
-    print("test case 1: create a link list with", ctr, "nodes")
+    print("test case 1: create a link list with", ctr, "node(s)")
     llist = LinkedList(initNode)
     testData.append(initNode.data)
-    for i in range(ctr-1):
+    for i in range(ctr):
         llist.addNode(Node(i))
         testData.append(Node(i).data)
     data = llist.data()
@@ -20,10 +20,18 @@ def linkedListTest(ctr, pos):
     llist.insertNode(newNode, pos)
     newData = llist.data()
     print(newData)
-    if(newData[pos] == newNode.data and llist.len == len(testData)+1): print("pass!")
+    if(newData[pos] == newNode.data): print("pass!")
+    else: print("fail!")
+    print("test case 3: delete node at position", pos)
+    llist.deleteNode(pos)
+    newData = llist.data()
+    print(newData)
+    if(newData == testData and llist.len == len(testData)): print("pass!")
     else: print("fail!")
 
 def runTests():
-    linkedListTest(31,3)
+    linkedListTest(0,0)
+    linkedListTest(1,1)
+    linkedListTest(3,2)
 
 runTests()
