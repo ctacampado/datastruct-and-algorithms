@@ -1,4 +1,5 @@
 from linkedList import Node, LinkedList
+from stack import Stack
 
 def linkedListTest(ctr, pos):
     print("Running Linked List Test...")
@@ -29,10 +30,38 @@ def linkedListTest(ctr, pos):
     if(newData == testData and llist.len == len(testData)): print("pass!")
     else: print("fail!")
 
+def stackTest():
+    print("Running Stack Test...")
+    testData = [1, '0x00', 0, True]
+    s = Stack()
+    print("pushing 1...")
+    s.push(1)
+    print("pushing B...")
+    s.push('B')
+    print("pushing &...")
+    s.push('&')
+    print("current stack stats:")
+    print("top: ", s.top())
+    print("size: ", s.size)
+    print("is empty: ", s.isEmpty)
+    print("popping all data...")
+    s.pop()
+    s.pop()
+    resData = []
+    resData.append(s.pop())
+    resData.append(s.top())
+    resData.append(s.size)
+    resData.append(s.isEmpty)
+    if(resData == testData):
+        print("test data: ", testData)
+        print("result data: ", resData)
+        print("pass!")
+
 def runTests():
     linkedListTest(0,0)
     linkedListTest(1,1)
     linkedListTest(3,2)
     linkedListTest(5,6)
+    stackTest()
 
 runTests()
