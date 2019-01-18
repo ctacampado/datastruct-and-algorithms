@@ -2,8 +2,7 @@
 Data Structure and Algorithms Implementations
 
 ## Description
-These are implementations of popular Data Structures and Algorithms using Python and Go. I chose
-these languages because I use them a lot in my job.
+These are implementations of popular Data Structures and Algorithms using Python and Go.
 
 ## Programming Lanugage Versions
 * Go - 1.11.4
