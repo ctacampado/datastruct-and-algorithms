@@ -1,5 +1,6 @@
 from linkedList import Node, LinkedList
 from stack import Stack
+from queue import Queue
 
 def linkedListTest(ctr, pos):
     print("Running Linked List Test...")
@@ -56,6 +57,36 @@ def stackTest():
         print("test data: ", testData)
         print("result data: ", resData)
         print("pass!")
+    else:
+        print("fail!")
+
+def queueTest():
+    print("Running Queue Test...")
+    testData = [1,'0x00',0]
+    resData = []
+    q = Queue()
+    print("enqueueing A...")
+    q.enqueue('A')
+    print("enqueueing B...")
+    q.enqueue('B')
+    print("enqueueing 1...")
+    q.enqueue(1)
+    print("current queue stats:")
+    print("front: ", q.front.data)
+    print("rear: ", q.rear.data)
+    print("size: ", q.size)
+    print("removing data from the queue...")
+    q.dequeue()
+    q.dequeue()
+    resData.append(q.dequeue())
+    resData.append(q.dequeue())
+    resData.append(q.size)
+    if(resData == testData):
+        print("test data: ", testData)
+        print("result data: ", resData)
+        print("pass!")
+    else:
+        print("fail!")
 
 def runTests():
     linkedListTest(0,0)
@@ -63,5 +94,6 @@ def runTests():
     linkedListTest(3,2)
     linkedListTest(5,6)
     stackTest()
+    queueTest()
 
 runTests()

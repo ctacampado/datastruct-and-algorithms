@@ -22,7 +22,7 @@ class Stack:
             return '0x00'
         else:
             val = self.t.data
-            if(self.t.prev != None):
+            if(None != self.t.prev):
                 self.t = self.t.prev
                 self.t.next = None
             else:
